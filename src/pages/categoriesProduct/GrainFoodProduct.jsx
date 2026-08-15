@@ -249,18 +249,18 @@ export default function GrainFoodProduct() {
 
     const filteredCakes = useMemo(() => {
         return products.filter((cake) => {
-            const matchesSearch = cake.name
+            const matchesSearch = (cake?.name || "")
                 .toLowerCase()
-                .includes(searchTerm.toLowerCase());
+                .includes((searchTerm || "").toLowerCase());
             const matchesPrice =
                 Number(cake.price) >= priceRange[0] &&
                 Number(cake.price) <= priceRange[1];
             const matchesCategory =
                 selectedCategories.length === 0 ||
-                selectedCategories.includes(cake.category.toLowerCase());
+                selectedCategories.includes((cake?.category || "").toLowerCase());
             const matchesFlavor =
                 selectedFlavors.length === 0 ||
-                selectedFlavors.includes(cake.flavor);
+                selectedFlavors.includes(cake?.flavor);
 
             return matchesSearch && matchesPrice && matchesCategory && matchesFlavor;
         });

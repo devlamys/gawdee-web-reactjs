@@ -380,9 +380,9 @@ export default function ProductmainPage() {
 
     const filteredCakes = useMemo(() => {
         return products.filter((cake) => {
-            const matchesSearch = cake.name
+            const matchesSearch = (cake?.name || "")
                 .toLowerCase()
-                .includes(searchTerm.toLowerCase());
+                .includes((searchTerm || "").toLowerCase());
             const matchesPrice =
                 Number(cake.price) >= priceRange[0] &&
                 Number(cake.price) <= priceRange[1];
@@ -841,6 +841,8 @@ export default function ProductmainPage() {
                                 isMobileOpen={isMobileFilterOpen}
                                 onMobileClose={() => setIsMobileFilterOpen(false)}
                                 productCount={filteredCakes.length}
+                                searchTerm={searchTerm}
+                                setSearchTerm={setSearchTerm}
                             />
                         </div>
 

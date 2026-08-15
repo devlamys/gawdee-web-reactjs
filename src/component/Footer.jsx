@@ -74,7 +74,7 @@ export default function Footer() {
                 href="https://www.instagram.com/gawdee_organic/"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, color: "#E1306C" }} 
+                whileHover={{ scale: 1.2, color: "#E1306C" }}
                 className="!cursor-pointer text-gray-600 transition-colors"
               >
                 <Instagram size={18} />
@@ -84,7 +84,7 @@ export default function Footer() {
                 href="https://www.facebook.com/GawdeeOrganic/"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, color: "#1877F2" }} 
+                whileHover={{ scale: 1.2, color: "#1877F2" }}
                 className="cursor-pointer text-gray-600 transition-colors"
               >
                 <Facebook size={18} />
@@ -94,7 +94,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@GawdeeOrganic"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, color: "#FF0000" }} 
+                whileHover={{ scale: 1.2, color: "#FF0000" }}
                 className="!cursor-pointer  text-gray-600 transition-colors"
               >
                 <FaYoutube size={18} />
@@ -157,11 +157,15 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="flex-shrink-0 text-[#0c776b]" />
-                <span>+91 98765 43210</span>
+                <a href="tel:+917055207030" className="hover:text-[#0c776b] transition-colors">
+                  +91 70552 07030
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="flex-shrink-0 text-[#0c776b]" />
-                <span>info@gawdee.com</span>
+                <a href="mailto:info@gawdee.com" className="hover:text-[#0c776b] transition-colors">
+                  info@gawdee.com
+                </a>
               </li>
             </ul>
 
@@ -267,11 +271,15 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Phone size={16} className="flex-shrink-0 text-[#0c776b]" />
-              <span>+91 98765 43210</span>
+              <a href="tel:+917055207030" className="hover:text-[#0c776b] transition-colors">
+                +91 70552 07030
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={16} className="flex-shrink-0 text-[#0c776b]" />
-              <span>info@gawdee.com</span>
+              <a href="mailto:info@gawdee.com" className="hover:text-[#0c776b] transition-colors">
+                info@gawdee.com
+              </a>
             </li>
           </ul>
 
@@ -291,7 +299,6 @@ export default function Footer() {
           <p className=" text-[12px] lg:text-[13px] md11:max-w-[500px] md118:max-w-[800px] order-2 lg:order-1 lg:text-left text-center">
             © {new Date().getFullYear()} All Rights Reserved by{" "}
             <b className="font-Cake font-[600] leading-none text-[#0c776b]">Gawdee</b>{" "}
-            || Designed and Developed with ❤️ by Grafizen International LLC.
           </p>
 
           <div className="md11:flex gap-6 hidden order-1 lg:mb-[0px] mb-[20px] lg:order-2 text-[13px] mt-4 md:mt-0">

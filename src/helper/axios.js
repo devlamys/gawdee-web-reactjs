@@ -2,6 +2,7 @@
 import axios from "axios";
 
 export const BaseURL = "https://gawdeebackend.grafizen.in/api/v2";
+// export const BaseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api/v2";
 
 export const DEVELOPER_INFO = Object.freeze({
   developedBy: "Grafizen International PVT. LTD.",
@@ -44,7 +45,7 @@ export const ApiDelete = (type, data = {}) => {
     axios
       .delete(BaseURL + type, {
         ...getHttpOptions(defaultHeaders),
-        data: data, 
+        data: data,
       })
       .then((responseJson) => {
         resolve(responseJson.data);
@@ -77,7 +78,7 @@ export const ApiPut = (type, data) => {
 export const ApiPutWithId = (type, data) => {
   return new Promise((resolve, reject) => {
     axios
-      .put(`${BaseURL}${type}`, data, getHttpOptions()) 
+      .put(`${BaseURL}${type}`, data, getHttpOptions())
       .then((responseJson) => {
         resolve(responseJson.data);
       })
@@ -133,7 +134,7 @@ export const ApiPostData = async (type, userData) => {
     return res.data;
   } catch (error) {
     throw {
-      code: error?.response?.status || 500, 
+      code: error?.response?.status || 500,
       error: error?.response?.data?.error || 'Unknown Error',
       message: error?.response?.data?.message || 'An error occurred while processing the request.',
     };

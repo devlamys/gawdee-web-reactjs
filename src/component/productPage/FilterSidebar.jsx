@@ -18,19 +18,19 @@ import {
 } from 'lucide-react';
 
 export function FilterSidebar({
-  selectedCategories,
+  selectedCategories = [],
   onCategoryChange,
   categoryOptions = [],
   onClearFilters,
   isMobileOpen,
   onMobileClose,
-    searchTerm,
+  searchTerm = '',
   setSearchTerm,
-    productCount = 0,
+  productCount = 0,
 }) {
 
   const getCategoryIcon = (value = '') => {
-    const v = value.toLowerCase();
+    const v = (value || '').toLowerCase();
 
     if (v.includes('ghee')) return Droplets;
     if (v.includes('honey')) return Sparkles;
@@ -42,8 +42,9 @@ export function FilterSidebar({
   };
 
   const filteredCategories = useMemo(() => {
-    return categoryOptions.filter((item) =>
-      item.label.toLowerCase().includes(searchTerm.toLowerCase())
+    const search = (searchTerm || '').toLowerCase();
+    return (categoryOptions || []).filter((item) =>
+      (item?.label || item?.value || '').toLowerCase().includes(search)
     );
   }, [categoryOptions, searchTerm]);
 

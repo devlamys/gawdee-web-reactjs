@@ -41,7 +41,7 @@ export default function ReturnDetailsPage() {
 
     delivery: {
       name: "Gawdee User",
-      phone: "9876543210",
+      phone: "7055207030",
       address: "Rajkot, Gujarat"
     }
   }
@@ -53,7 +53,7 @@ export default function ReturnDetailsPage() {
     { label: "Refunded", icon: CreditCard }
   ]
 
-  const currentStep = 1 
+  const currentStep = 1
 
   return (
     <>
