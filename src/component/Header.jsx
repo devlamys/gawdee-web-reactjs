@@ -628,20 +628,20 @@ export default function Header() {
   return (
     <>
       <header className="w-full fixed top-0 left-0 z-[1000] shadow-sm">
-        {/* Top Promotional Bar (Sleek Compact Dual-Color Bar) */}
-        <div className="w-full text-white text-[10px] sm:text-[11px] md:text-[11.5px] font-medium tracking-wide flex items-stretch overflow-hidden select-none h-[26px] sm:h-[28px]">
-          {/* Left Side: Orange Saffron Background */}
-          <div className="w-1/2 bg-[#ea6f22] py-0.5 px-2 flex items-center justify-center gap-1.5 shadow-inner">
-            <span className="text-[12px] leading-none">🇮🇳</span>
-            <span className="truncate text-center">
-              Independence Day Specials — Flat 10% OFF on all orders | Use Code: <span className="font-bold">FREEDOM10</span>
+        {/* Top Promotional Bar (Orange 65% to Green Gradient Bar) */}
+        <div className="w-full text-white text-[11px] sm:text-[12px] md:text-[12.5px] font-semibold tracking-wide flex items-center justify-between overflow-hidden select-none h-[28px] sm:h-[30px] px-3 md:px-8 bg-[linear-gradient(95deg,#ea6f22_0%,#ea6f22_60%,#0c6636_72%,#0c6636_100%)] shadow-md">
+          {/* Left Side (Orange 65% Area) */}
+          <div className="flex items-center gap-1.5 sm:gap-2 truncate max-w-[65%] sm:max-w-[70%]">
+            {/* <span className="text-[13px] leading-none flex-shrink-0">&#127470;&#127475;&#x1F1EE;&#x1F1F3;</span> */}
+            <span className="truncate">
+              🇮🇳 Independence Day Specials — Flat 10% OFF on all orders | Use Code: FREEDOM10
             </span>
           </div>
 
-          {/* Right Side: Deep Green Background */}
-          <div className="w-1/2 bg-[#0c6636] py-0.5 px-2 flex items-center justify-center gap-1.5 text-center shadow-inner">
-            <Truck size={13} className="text-white flex-shrink-0" />
-            <span className="truncate">Free shipping on orders above ₹999</span>
+          {/* Right Side (Green Area) */}
+          <div className="flex items-center gap-1.5 flex-shrink-0">
+            <Truck size={14} className="text-white flex-shrink-0" />
+            <span className="truncate font-semibold">Free shipping on orders above ₹999</span>
           </div>
         </div>
 

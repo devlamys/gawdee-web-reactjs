@@ -562,7 +562,7 @@ export default function RecomandedProduct() {
 
                 setCartData(formatted);
 
-                setOpenCart(true); 
+                setOpenCart(true);
 
                 window.dispatchEvent(
                     new CustomEvent("guest-cart-updated", {
@@ -581,7 +581,7 @@ export default function RecomandedProduct() {
                 return formatCartForDrawer(updated, "user-cart");
             });
 
-            setOpenCart(true); 
+            setOpenCart(true);
 
             window.dispatchEvent(new Event("cart-updated"));
 
@@ -602,8 +602,8 @@ export default function RecomandedProduct() {
         const el = scrollRef.current;
         if (!el) return;
 
-        setShowLeft(el.scrollLeft > 10); 
-        setShowRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 10); 
+        setShowLeft(el.scrollLeft > 10);
+        setShowRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 10);
     };
 
     useEffect(() => {
@@ -878,8 +878,8 @@ export default function RecomandedProduct() {
                                                 onClick={(e) => handleWishlistClick(e, item)}
                                                 disabled={productWishlistLoading}
                                                 className={`w-[25px] md:w-[30px] border border-[#0c776b] h-[25px] md:h-[30px] flex-shrink-0 rounded-full transition flex items-center justify-center ${productWishlisted
-                                                        ? "bg-[#0c776b] text-white"
-                                                        : "bg-[#f5f5f5] text-[#0c776b] hover:bg-[#0c776b] hover:text-white"
+                                                    ? "bg-[#0c776b] text-white"
+                                                    : "bg-[#f5f5f5] text-[#0c776b] hover:bg-[#0c776b] hover:text-white"
                                                     } ${productWishlistLoading ? "opacity-60 cursor-not-allowed" : ""}`}
                                             >
                                                 <Heart
