@@ -1,8 +1,8 @@
 /* Developed by Grafizen International PVT. LTD. */
 import axios from "axios";
 
-export const BaseURL = "https://gawdeebackend.grafizen.in/api/v2";
-// export const BaseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api/v2";
+// export const BaseURL = "https://gawdeebackend.grafizen.in/api/v2";
+export const BaseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api/v2";
 
 export const DEVELOPER_INFO = Object.freeze({
   developedBy: "Grafizen International PVT. LTD.",

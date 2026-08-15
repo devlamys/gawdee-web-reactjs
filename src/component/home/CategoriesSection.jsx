@@ -24,6 +24,7 @@ import { useNavigate } from "react-router-dom";
 import { getMediaUrl } from "@/utils/media";
 import OptimizedImage from "@/component/common/OptimizedImage";
 import CartDrawer from "../OrderProcess/CartDrawer";
+import IndependencePromoBanner from "./IndependencePromoBanner";
 import {
   addItemToGuestCart,
   getGuestCart,
@@ -949,26 +950,21 @@ export default function CategoriesSection() {
             );
           })}
         </div>
-
       </div>
 
       <div className=" md:pl-[80px]  mx-auto  mt-[30px]  w-fit  " onClick={handleViewmore}>
-
         <button
-          class="cursor-pointer w-fit bg-gradient-to-b from-[#0c776b] to-[#077468] shadow-[0px_4px_32px_0_rgba(34,197,94,0.5)] px-6 py-2 rounded-xl border-[1px] border-slate-500 text-white font-medium group"
-
+          className="cursor-pointer w-fit bg-gradient-to-b from-[#0c776b] to-[#077468] shadow-[0px_4px_32px_0_rgba(34,197,94,0.5)] px-6 py-2 rounded-xl border-[1px] border-slate-500 text-white font-medium group"
         >
-          <div class="relative overflow-hidden">
-            <p
-              class=" flex items-center gap-[6px] duration-[1.125s] "
-            >
+          <div className="relative overflow-hidden">
+            <p className="flex items-center gap-[6px] duration-[1.125s]">
               View More
-
-              <ArrowRight size={20} />    </p>
-
+              <ArrowRight size={20} />
+            </p>
           </div>
         </button>
       </div>
+      <IndependencePromoBanner />
       <CartDrawer
         isOpen={openCart}
         onClose={async () => {

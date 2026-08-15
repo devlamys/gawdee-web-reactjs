@@ -15,9 +15,10 @@ import {
   LogIn,
   Grid3x3,
   User2,
+  Truck,
 } from "lucide-react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import logoMain from "../../public/imges/Logo-green-text.png"; 
+import logoMain from "../../public/imges/Logo-green-text.png";
 
 import viewAll from "../../public/imges/header/viewAll.png"
 import desiGhee from "../../public/imges/header/ghee.png"
@@ -129,7 +130,7 @@ const buildCartObject = (items = [], cartId = "guest-cart") => {
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isLoginOpen, setIsLoginOpen] = useState(false)
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -300,7 +301,7 @@ export default function Header() {
     if (lower.includes("drops")) return drops;
     if (lower.includes("sugar")) return sugar;
 
-    return null; 
+    return null;
   };
 
   const navItems = [
@@ -314,10 +315,10 @@ export default function Header() {
     return text
       .toLowerCase()
       .trim()
-      .replace(/&/g, "and")           
-      .replace(/[^\w\s-]/g, "")       
-      .replace(/\s+/g, "-")           
-      .replace(/--+/g, "-");          
+      .replace(/&/g, "and")
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/--+/g, "-");
   };
   const navItemsMobile = [
 
@@ -626,26 +627,39 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full fixed top-0 left-0 z-[1000] ">
+      <header className="w-full fixed top-0 left-0 z-[1000] shadow-sm">
+        {/* Top Promotional Bar (Sleek Compact Dual-Color Bar) */}
+        <div className="w-full text-white text-[10px] sm:text-[11px] md:text-[11.5px] font-medium tracking-wide flex items-stretch overflow-hidden select-none h-[26px] sm:h-[28px]">
+          {/* Left Side: Orange Saffron Background */}
+          <div className="w-1/2 bg-[#ea6f22] py-0.5 px-2 flex items-center justify-center gap-1.5 shadow-inner">
+            <span className="text-[12px] leading-none">🇮🇳</span>
+            <span className="truncate text-center">
+              Independence Day Specials — Flat 10% OFF on all orders | Use Code: <span className="font-bold">FREEDOM10</span>
+            </span>
+          </div>
 
-        <div className="w-full md11:hidden block   bg-white overflow-hidden">
+          {/* Right Side: Deep Green Background */}
+          <div className="w-1/2 bg-[#0c6636] py-0.5 px-2 flex items-center justify-center gap-1.5 text-center shadow-inner">
+            <Truck size={13} className="text-white flex-shrink-0" />
+            <span className="truncate">Free shipping on orders above ₹999</span>
+          </div>
+        </div>
 
+        {/* Mobile Header */}
+        <div className="w-full md11:hidden block bg-white overflow-hidden">
           <div className="relative h-[53px] bg-[#f7f7f7] flex items-center justify-between px-3">
-
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex w-[100px] ">
-
-              {mobileOpen ? <X className="text-[#0c776b]" size={28} /> : <Menu
-                size={32}
-                strokeWidth={1}
-                className="text-[#0c776b]"
-
-              />}
+              className="flex w-[100px] "
+            >
+              {mobileOpen ? (
+                <X className="text-[#0c776b]" size={28} />
+              ) : (
+                <Menu size={32} strokeWidth={1} className="text-[#0c776b]" />
+              )}
             </button>
 
             <div className=" ">
-
               <img
                 src={logoMain}
                 alt="logo"
@@ -655,15 +669,8 @@ export default function Header() {
             </div>
 
             <div className="flex w-[100px] items-center  justify-end gap-[15px]">
-
-              <button
-                onClick={() => setSearchOpen(true)}
-                className=" w-fit">
-                <Search
-                  size={20}
-                  strokeWidth={1.8}
-                  className="text-[#0c776b]"
-                />
+              <button onClick={() => setSearchOpen(true)} className=" w-fit">
+                <Search size={20} strokeWidth={1.8} className="text-[#0c776b]" />
               </button>
 
               <button
@@ -694,14 +701,6 @@ export default function Header() {
               </button>
             </div>
           </div>
-
-          <div className="h-[30px] bg-[#0c776b] flex items-center justify-center px-4">
-
-            <p className="text-yellow-300 text-[13px] font-[600] tracking-[1px]">
-              Get extra 2% off on all prepaid orders
-            </p>
-          </div>
-
         </div>
 
         <motion.div
