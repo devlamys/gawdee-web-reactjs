@@ -107,9 +107,15 @@ export function LoginModal({ isOpen, onClose, onSuccess }) {
       setMaskedMobile(`+91 ${mobile.slice(0, 2)}******${mobile.slice(-2)}`);
       setStep("otp");
 
-      setTimeout(() => {
-        document.getElementById("otp-hidden")?.focus();
-      }, 300);
+      // Temporarily auto-fetch OTP and auto-login
+      const fetchedOtp = res.data?.otp;
+      if (fetchedOtp) {
+        fillOtpAndVerify(String(fetchedOtp));
+      } else {
+        setTimeout(() => {
+          document.getElementById("otp-hidden")?.focus();
+        }, 300);
+      }
     } catch (err) {
       console.log("OTP Error:", err);
       alert(err.message || "Something went wrong");
